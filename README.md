@@ -122,7 +122,6 @@ Now, go to your pc, open up a terminal and type the following command to connect
  sudo screen /dev/ttyUSB1 115200 
 ``` 
 
-### booted petalinux image ####
-
+![Booted Petalinux](/images/booted_petalinux.png)
 
 So go ahead and play around with your linux and have fun 
