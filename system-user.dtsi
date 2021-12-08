@@ -1,0 +1,82 @@
+/include/ "system-conf.dtsi"
+/ {
+  chosen {
+    xlnx,eeprom = &eeprom;
+  };
+};
+
+#include <dt-bindings/gpio/gpio.h>
+
+/* SD */
+
+&sdhci0 {
+    disable-wp;
+    no-1-8-v;
+};
+
+/* USB  */
+
+&dwc3_0 {
+    status = "okay";
+    dr_mode = "host";
+    //snps,usb3_lpm_capable;
+    //snps,dis_u3_susphy_quirk;
+    //snps,dis_u2_susphy_quirk;
+    //phy-names = "usb2-phy","usb3-phy";
+	//phys = <&lane1 4 0 2 26000000>;
+    //maximum-speed = "super-speed";
+};
+
+/ {
+    leds {
+        compatible = "gpio-leds";
+        ndp_en {
+            label = "ndp_en";
+            gpios = <&gpio 26 GPIO_ACTIVE_HIGH>;
+            default-state = "on";
+        };
+        ssd_sleep {
+            label = "ssd_sleep";
+            gpios = <&gpio 32 GPIO_ACTIVE_HIGH>;
+            default-state = "on";
+        };
+        usb_reset {
+            label = "usb_reset";
+            gpios = <&gpio 38 GPIO_ACTIVE_HIGH>;
+            default-state = "on";
+        };
+    };
+};
+
+/* ETH PHY */
+
+&gem3 {
+    phy-handle = <&phy0>;
+    phy0: phy0@1 {
+        device_type = "ethernet-phy";
+        reg = <1>;
+    };
+};
+
+/* QSPI */
+
+&qspi {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    status = "okay";
+    flash0: flash@0 {
+        compatible = "jedec,spi-nor";
+        reg = <0x0>;
+        #address-cells = <1>;
+        #size-cells = <1>;
+    };
+};
+
+
+/* I2C */
+&i2c1 {
+    eeprom: eeprom@50 {
+        compatible = "atmel,24c08";
+        reg = <0x50>;
+    };
+};
