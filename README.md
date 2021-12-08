@@ -49,14 +49,14 @@ The first step is to create a petalinux project. the only important parameter he
   petalinux-create --type project --template zynqMP --name my_linux
 ```
 
-Next, moving towards configuring the petalinux. Here you have to specify the hardware design (which you have generated yourself or selected it from this repo). You can do it by running the command below. After running it, a configuration window will open up. The only change that you need to do in the config window is to change the location of Root filesystem to the SD card. Initially the Root file system is set to boot from INITRD (which boots the filesystem form the RAM). As you are in the config window, you can make this change by goitn to Image Packaging Configuration, then go to Root filesystem type and change it to `SD/eMMC/QSPI/SATA/USB`. 
+Next, moving towards configuring the petalinux. Here you have to specify the hardware design (which you have generated yourself or selected it from this repo). You can do it by running the command below. After running it, a configuration window will open up. The only change that you need to do in the config window is to change the location of Root filesystem to the SD card. Initially the Root file system is set to boot from INITRD (which boots the filesystem form the RAM). As you are in the config window, you can make this change by going to **Image Packaging Configuration**, then go to Root filesystem type and change it to `SD/eMMC/QSPI/SATA/USB`. 
 ```
  petalinux-config --get-hw-description <path to .xsa file>
 ```
 
 If you want to add pre-provided packages to your petalinux, you can do it by running the config command as shown below. Another configuration window will open up. There, you can choose your desired packages.
 ```
- petalinix-config -c rootfs
+ petalinux-config -c rootfs
 ```
 
 
