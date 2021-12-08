@@ -87,7 +87,7 @@ The SD card should be partitioned into two different partitions.
 1. FAT32 (1GB), 
 2. ext4(4GB+)
 
-In order to partiton the SD card, there is an amazing guide by Xilinx. You can have a look at it by clicking here:(Formatting SD Card)[https://xilinx-wiki.atlassian.net/wiki/pages/viewpage.action?pageId=724009318&navigatingVersions=true]
+In order to partiton the SD card, there is an amazing guide by Xilinx. You can have a look at it by clicking here: [Formatting SD Card](https://xilinx-wiki.atlassian.net/wiki/pages/viewpage.action?pageId=724009318&navigatingVersions=true)
 
 # Copy the files to the SD Card
 After partitioning, you have to copy the boot files and the root filessytem to the sd card appropriately.
