@@ -80,7 +80,7 @@ As soon as it is done, we are ready to package our linux. So go ahead and run th
 # Configuring the Board to boot from the sd card
 In order for the operating system to be booted properly, the jumper configuration needs to be changed from JTAG to SD. It can be done by changing the jumper configuration. According to the Trenz TE0802 documentation, in order to boot from the sd card, you have to change the jumpers to:
 
-![Jumper Setup. Photo Courtesy Whitney Knitter:https://hackster.imgix.net/uploads/attachments/1335445/sd_boot_mode_QK2dgwhbfK.png?auto=compress%2Cformat&w=740&h=555&fit=max ](/images/jumper_setup.png)
+![Jumper Setup. Photo Courtesy Whitney Knitter:https://hackster.imgix.net/uploads/attachments/1335445/sd_boot_mode_QK2dgwhbfK.png?auto=compress%2Cformat&w=740&h=555&fit=max ](/images/jumper_setup.png) *Photo Courtesy Whitney Knitter*
 
 # SD card partition
 The SD card should be partitioned into two different partitions. 
