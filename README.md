@@ -93,26 +93,25 @@ In order to partiton the SD card, there is an amazing guide by Xilinx. You can h
 # Copy the files to the SD Card
 After partitioning, you have to copy the boot files and the root filessytem to the sd card appropriately.
 
-1. Automated copyign:
-You can copy the all the files automatically to the sd card. you can do this by copying load_sd_card.sh to '<petalinux project>/images/linux' and executing it. 
-**Warning:** Change your sd card device id from 'sdb1' to your sd card id.
+- Automated copyign:
+  You can copy the all the files automatically to the sd card. you can do this by copying load_sd_card.sh to '<petalinux project>/images/linux' and executing it. 
+  **Warning:** Change your sd card device id from 'sdb1' to your sd card id.
+- Manual copying 
 
-2. Manual copying 
-
-2.1 Copy to FAT32 partition
-```
-<petalinux project>/images/linux/BOOT.BIN
-<petalinux project>/images/linux/boot.scr
-<petalinux project>/images/linux/image.ub
-<petalinux project>/images/linux/system.dtb
-```
-2.2 Copy to EXT4 partition
-extract the rootfs tar to EXT4 file
-```
-<petalinux project>/images/linux/rootfs.tar.gz
-```
-2.3 Run the `sync` command to synchronize all the files on the sd card 
-2.4 Unmount the sd card
+  - Copy to FAT32 partition
+    ```
+    <petalinux project>/images/linux/BOOT.BIN
+    <petalinux project>/images/linux/boot.scr
+    <petalinux project>/images/linux/image.ub
+    <petalinux project>/images/linux/system.dtb
+    ```
+  - Copy to EXT4 partition
+    Extract the rootfs tar to EXT4 file
+    ```
+    <petalinux project>/images/linux/rootfs.tar.gz
+    ```
+  - Run the `sync` command to synchronize all the files on the sd card 
+  - Unmount the sd card
 
 # Booting the linux
 Insert your sd card and insert it into the FPGA board. Connect your board to your pc with a micro usb cable. You can also connect an ethernet cable (optional). Finally plug in the power adapter to turn on the board.
